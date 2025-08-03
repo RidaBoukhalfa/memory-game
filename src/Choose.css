@@ -1,0 +1,69 @@
+.choose-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: #e0dfdf;
+    padding: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 85vh;
+}
+
+.input {
+    display: flex;              /* Align icon and text */
+    align-items: center;        /* Vertically center */
+    gap: 10px;                  /* Space between icon and text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    font-size: 1rem;
+}
+
+.input:hover {
+    background-color: #0056b3;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.player {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.random {
+    display: flex;
+    gap: 10px;                  /* Space between icon and text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007ba0;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    font-size: 1rem;
+}
+
+.random:hover {
+    background-color: #022c5a;
+}
