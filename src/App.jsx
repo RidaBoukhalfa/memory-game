@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-    <BrowserRouter basename="/memory-game/">
+    <BrowserRouter basename="/memory-game">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/vs" element={<Vs />} />
