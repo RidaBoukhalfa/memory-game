@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-    <Router>
+    <BrowserRouter basename="/gameRPS">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/vs" element={<Vs />} />
@@ -34,7 +34,7 @@ function App() {
         <Route path="/CustomGame" element={<CustomGame />} />
         <Route path="/CustomRandom" element={<CustomRandom />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
