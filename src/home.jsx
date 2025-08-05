@@ -2,28 +2,31 @@ import './home.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import memory from './memory.png';
+import Swal from 'sweetalert2';
 
 function Home() {
   const navigate = useNavigate();
   const [player1Name, setPlayer1Name] = useState('');
   const [player2Name, setPlayer2Name] = useState('');
-  const [error1, setError1] = useState(false);
-  const [error2, setError2] = useState(false);
 
   const handleDone = () => {
     const isPlayer1Empty = player1Name.trim() === '';
     const isPlayer2Empty = player2Name.trim() === '';
 
-    setError1(isPlayer1Empty);
-    setError2(isPlayer2Empty);
-
-    if (isPlayer1Empty || isPlayer2Empty) return;
+    if (isPlayer1Empty || isPlayer2Empty) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Missing Names!',
+        text: 'Please enter names for both players.',
+        confirmButtonColor: '#3085d6',
+      });
+      return;
+    }
 
     localStorage.setItem('player1Name', player1Name);
     localStorage.setItem('player2Name', player2Name);
     navigate('/Choose');
   };
-
 
   return (
     <div>
@@ -35,23 +38,19 @@ function Home() {
         <div className='players'>
           <input
             type="text"
-            className={`player-input ${error1 ? 'input-error' : ''}`}
+            className="player-input"
             placeholder="Player 1 Name"
             value={player1Name}
             onChange={(e) => setPlayer1Name(e.target.value)}
           />
           <input
             type="text"
-            className={`player-input ${error2 ? 'input-error' : ''}`}
+            className="player-input"
             placeholder="Player 2 Name"
             value={player2Name}
             onChange={(e) => setPlayer2Name(e.target.value)}
           />
         </div>
-
-        {(error1 || error2) && (
-          <p className="error-message">Please enter names for both players!</p>
-        )}
 
         <button className='home-button' onClick={handleDone}>Start Game</button>
       </div>
